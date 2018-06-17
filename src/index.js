@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import Counter from './Components/Counter.js'
+import Menu from './Components/menu.component'
+
 const reducer = (state = 0, action) => {
     switch(action.type) {
         case 'INCREMENT':
@@ -16,6 +18,7 @@ const reducer = (state = 0, action) => {
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 render(
     <Provider store={store}>
+        <Menu />
         <Counter />
     </Provider>,
     document.getElementById('root')
